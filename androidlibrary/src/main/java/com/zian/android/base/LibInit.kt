@@ -23,7 +23,7 @@ class LibInit {
     /**
      * 添加Retrofit请求的ip地址及成功的code 如 http://12.34.56.789:80/
      */
-    fun setRequestBaseUrl(url: String, successCode: Int): LibInit {
+    fun setRequestBaseUrl(url: String): LibInit {
         ConstConfig.BASE_URL = url
         return this
     }
