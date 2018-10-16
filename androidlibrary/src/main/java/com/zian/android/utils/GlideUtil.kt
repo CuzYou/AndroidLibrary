@@ -3,7 +3,9 @@ package com.zian.android.utils
 import android.content.Context
 import android.text.TextUtils
 import android.widget.ImageView
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.zian.android.R
+import com.zian.android.base.GlideApp
 import com.zian.android.utils.glide.GlideCircleTransform
 
 /**
