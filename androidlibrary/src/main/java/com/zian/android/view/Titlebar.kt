@@ -1,17 +1,17 @@
 package com.zian.android.view
 
 import android.content.Context
-import android.graphics.Color
-import android.os.Build
+import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.zian.android.R
+import com.zian.android.config.ConstConfig
 
 /**
- * Just : 
+ * Just :
  * @author by Zian
  * @date on 2018/8/3.
  */
@@ -41,7 +41,12 @@ class Titlebar : LinearLayout {
         val titleView = LayoutInflater.from(context).inflate(R.layout.layout_title_bar, this)
         llTitleBar = titleView.findViewById(R.id.ll_title_bar)
         val paddingTop = llTitleBar!!.paddingTop + getStatusBarHeight()
-        llTitleBar?.setPadding(llTitleBar!!.paddingLeft, paddingTop, llTitleBar!!.paddingRight, llTitleBar!!.paddingBottom)
+        llTitleBar?.setPadding(
+            llTitleBar!!.paddingLeft,
+            paddingTop,
+            llTitleBar!!.paddingRight,
+            llTitleBar!!.paddingBottom
+        )
 
         llLeft = titleView.findViewById(R.id.ll_left)
         ivLeft = titleView.findViewById(R.id.iv_left)
@@ -50,6 +55,9 @@ class Titlebar : LinearLayout {
         llTitle = titleView.findViewById(R.id.ll_title)
         tvTitle = titleView.findViewById(R.id.tv_title)
         ivTitleRight = titleView.findViewById(R.id.iv_title_right)
+
+        setTitleBarColor(ConstConfig.TITLEBAR_BG_COLOR, ConstConfig.TITLEBAR_FONT_COLOR)
+
     }
 
     fun setLeftLayoutVisibility(visibility: Int) {
@@ -100,15 +108,15 @@ class Titlebar : LinearLayout {
         tvRight?.setOnClickListener(listener)
     }
 
-    fun setTitleBarColor(colorTitleBar: Int, colorTitle: Int, colorTitleText: Int) {
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            llTitleBar?.setBackgroundColor(colorTitleBar)
-        } else {
-            llTitleBar?.setBackgroundColor(Color.parseColor("#11D8C3"))
-        }
-        llTitle?.setBackgroundColor(colorTitle)
-        tvTitle?.setTextColor(colorTitleText)
+    /**
+     * @param colorTitleBar : 标题栏背景颜色
+     * @param colorTitleText : 标题栏字体颜色
+     */
+    fun setTitleBarColor(colorTitleBar: Int, colorTitleText: Int) {
+        llTitleBar?.setBackgroundColor(ContextCompat.getColor(context, colorTitleBar))
+        tvLeft?.setTextColor(ContextCompat.getColor(context, colorTitleText))
+        tvRight?.setTextColor(ContextCompat.getColor(context, colorTitleText))
+        tvTitle?.setTextColor(ContextCompat.getColor(context, colorTitleText))
     }
 
 

@@ -1,6 +1,9 @@
 package com.zian.android.base
 
 import android.content.Context
+import android.support.annotation.ColorInt
+import android.support.v4.content.ContextCompat
+import com.zian.android.R
 import com.zian.android.config.ConstConfig
 
 class LibInit {
@@ -57,6 +60,15 @@ class LibInit {
      */
     fun setIsDebug(isDebug: Boolean): LibInit {
         ConstConfig.IS_DEBUG = isDebug
+        return this
+    }
+
+    /**
+     * 标题栏背景 字体颜色
+     */
+    fun setTitleBarColor(bgColor: Int, fontColor: Int): LibInit {
+        ConstConfig.TITLEBAR_BG_COLOR = bgColor
+        ConstConfig.TITLEBAR_FONT_COLOR = fontColor
         return this
     }
 

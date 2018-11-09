@@ -3,7 +3,7 @@
     android:id="@+id/ll_title_bar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#11D8C3"
+    android:background="@color/title_bar_bg_color"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:textColor="#ffffff"
+                android:textColor="@color/title_bar_font_color"
                 android:textSize="18sp"
                 android:visibility="gone" />
 
@@ -44,7 +44,7 @@
             android:layout_centerVertical="true"
             android:padding="10dp"
             android:text="下一步"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/title_bar_font_color"
             android:textSize="16sp"
             android:visibility="gone" />
 
@@ -60,7 +60,7 @@
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/title_bar_font_color"
                 android:textSize="16sp" />
 
             <ImageView
